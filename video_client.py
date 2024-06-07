@@ -99,8 +99,8 @@ async def echo_client_proto(scope: Dict, conn: EchoQuicConnection, video_path: s
         await upload_video(scope, conn, video_path)
 
 async def start_client():
-    scope = {}  # This would be your actual QUIC connection scope
-    conn = EchoQuicConnection()  # This would be your actual QUIC connection object
+    scope = {}  # This would be the actual QUIC connection scope
+    conn = EchoQuicConnection()  # This would be the actual QUIC connection object
     await echo_client_proto(scope, conn, "testvideo.mp4", False)
 
 if __name__ == "__main__":

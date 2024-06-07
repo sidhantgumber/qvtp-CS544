@@ -1,6 +1,10 @@
 QVTP - QUIC Video Transfer Protocol
 
-
+Team Members:
+Sidhant Gumber: 14664480
+Nakul Narang: 14649250
+Shantanu Sharma: 14671956
+ 
 Overview
 
 QVTP (QUIC Video Transfer Protocol) is a file transfer protocol implemented over QUIC to enable the reliable transfer of video files. The protocol ensures data integrity and handles stateful connections using session tickets. Our current implementation handles client side uploads correctly by encoding the video in byte sized chunks each being 10kb (our testing video was 330kb so we chose a lower value to ensure that serialization into packets is done correctly). However the server only receives a few data packets before being stuck and we get error messages that we tried our best to resolve but unfortunately, this was the most we could do. This indicates that the client-side code successfully serializes the video data, but the server encounters issues with deserializing the received data. The errors suggest problems with character encoding, indicating that the data might not be correctly interpreted as binary.
